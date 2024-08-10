@@ -12,5 +12,15 @@
         "title": "Test 3",
         "text": "Text 3",
         "note_id": "4fd22ebe-b2d5-42c7-8a3a-78910463f0ce"
+    },
+    {
+        "title": "Hello",
+        "text": "Goodbye",
+        "note_id": "b18be26a-b866-4f45-92c2-edbb2b3e6bf1"
+    },
+    {
+        "title": "My note",
+        "text": "This is my note",
+        "note_id": "2be36f0d-9875-49c8-a81c-321b65ed5a83"
     }
 ]
