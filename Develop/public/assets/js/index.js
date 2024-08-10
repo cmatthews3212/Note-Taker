@@ -57,7 +57,7 @@ const renderActiveNote = () => {
   hide(saveNoteBtn);
   hide(clearBtn);
 
-  if (activeNote.id) {
+  if (activeNote.note_id) {
     show(newNoteBtn);
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
@@ -174,21 +174,44 @@ const renderNoteList = async (notes) => {
     li.dataset.note = JSON.stringify(note);
 
     noteListItems.push(li);
+   
   });
 
   if (window.location.pathname === '/notes') {
     noteListItems.forEach((note) => noteList[0].append(note));
   }
+
+  if (window.location.pathname === '/notes') {
+    noteListItems.forEach((note) => {
+      note.addEventListener('click', () => {
+        const noteInfo = note.getAttribute('data-note')
+        const parsedNoteInfo = JSON.parse(noteInfo);
+        if (parsedNoteInfo.note_id === activeNote.note_id) {
+          console.log(true);
+          renderActiveNote()
+
+        } else {
+          console.log(false)
+        }
+      })
+    });
+  }
+
 };
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
+
+
+
+
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   clearBtn.addEventListener('click', renderActiveNote);
   noteForm.addEventListener('input', handleRenderBtns);
+
 }
 
 getAndRenderNotes();
