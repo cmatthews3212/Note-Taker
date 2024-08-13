@@ -27,7 +27,7 @@ notes.post('/', (req, res) => {
             note_id: uuidv4(),
         }
 
-        readAndAppend(newNote, '../develop/db/db.json');
+        readAndAppend(newNote, './db/db.json');
         const response = {
             status: 'success',
             body: newNote,
@@ -38,6 +38,28 @@ notes.post('/', (req, res) => {
     } else {
         res.json('Error in posting note')
     }
+});
+
+notes.delete('/note_id', (req, res) => {
+    fs.readFile(path.join('../develop/db/db.json'), 'utf8', (err, data) => {
+        if (err) {
+            console.error(err)
+        } else {
+            res.json(JSON.parse(data))
+        }
+    })
+
+    // const noteId = res.json(JSON.parse(res.body));
+    // console.log(noteId)
+
+    // const index = notes.findIndex(note => note.id === noteId);
+
+    // if (index !== -1) {
+    //     notes.splice(index, 1)
+    //     res.status(200).json({message: 'Note deleted successfully'})
+    // } else {
+    //     res.status(404).json({message: 'User not found'});
+    // }
 })
 
 module.exports = notes;

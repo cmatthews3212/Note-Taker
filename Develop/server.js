@@ -20,11 +20,7 @@ app.get('/', (req, res) => {
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 })
-// GET Wildcard route
-// app.get('*', (req, res) => {
-//     res.status(404).sendFile(path.join(__dirname, '/public/pages/404.html'));
-//     console.log('this is a 404 error');
-//   });
+
 
   
   app.listen(PORT, () =>

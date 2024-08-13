@@ -22,5 +22,20 @@
         "title": "My note",
         "text": "This is my note",
         "note_id": "2be36f0d-9875-49c8-a81c-321b65ed5a83"
+    },
+    {
+        "title": "Test Title 2",
+        "text": "Text text 2",
+        "note_id": "45a5534a-1f80-4c2c-bb95-ba2ad6f5f440"
+    },
+    {
+        "title": "Note by Me",
+        "text": "Text",
+        "note_id": "fc3a6149-5ab3-47b0-97f0-76c1cf068245"
+    },
+    {
+        "title": "Hello",
+        "text": "there",
+        "note_id": "96394a86-2e68-4ed3-a57c-354451818ff6"
     }
 ]
