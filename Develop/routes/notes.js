@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 const { readAndAppend, readFromFile } = require('../helpers/fsUtils.js');
 
 notes.get('/', (req, res) => {
-    fs.readFile(path.join('../develop/db/db.json'), 'utf8', (err, data) => {
+    fs.readFile(path.join('./db/db.json'), 'utf8', (err, data) => {
         if (err) {
             console.error(err)
         } else {
@@ -40,14 +40,14 @@ notes.post('/', (req, res) => {
     }
 });
 
-notes.delete('/note_id', (req, res) => {
-    fs.readFile(path.join('../develop/db/db.json'), 'utf8', (err, data) => {
-        if (err) {
-            console.error(err)
-        } else {
-            res.json(JSON.parse(data))
-        }
-    })
+// notes.delete('/note_id', (req, res) => {
+//     fs.readFile(path.join('../develop/db/db.json'), 'utf8', (err, data) => {
+//         if (err) {
+//             console.error(err)
+//         } else {
+//             res.json(JSON.parse(data))
+//         }
+//     })
 
     // const noteId = res.json(JSON.parse(res.body));
     // console.log(noteId)
@@ -60,6 +60,6 @@ notes.delete('/note_id', (req, res) => {
     // } else {
     //     res.status(404).json({message: 'User not found'});
     // }
-})
+// })
 
 module.exports = notes;
