@@ -202,11 +202,11 @@ const renderNoteList = async (notes) => {
         const noteInfo = note.getAttribute('data-note')
         const parsedNoteInfo = JSON.parse(noteInfo);
         if (parsedNoteInfo.note_id === activeNote.note_id) {
-          console.log(true);
+          // console.log(true);
           renderActiveNote()
 
         } else {
-          console.log(false)
+          console.log("Please click again.")
         }
       })
     });
