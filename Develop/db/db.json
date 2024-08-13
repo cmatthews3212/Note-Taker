@@ -37,5 +37,10 @@
         "title": "Hello",
         "text": "there",
         "note_id": "96394a86-2e68-4ed3-a57c-354451818ff6"
+    },
+    {
+        "title": "Text",
+        "text": "text",
+        "note_id": "32b53b0a-3916-4178-a612-8969d15519fa"
     }
 ]
